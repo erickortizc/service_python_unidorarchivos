@@ -1,13 +1,13 @@
 
-from flask_cors import CORS
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from PyPDF2 import PdfMerger
 from PIL import Image
 import io
 import base64
 
 app = Flask(__name__)
-CORS(app)  # Esto habilita CORS para todos los dominios
+CORS(app, origins="http://127.0.0.1:5500")# O, si solo quieres permitir ciertos dominios:
 # O, si solo quieres permitir ciertos dominios:
 # CORS(app, origins=["http://127.0.0.1:5500", "http://otro-dominio.com"])
 
